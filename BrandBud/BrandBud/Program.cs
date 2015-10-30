@@ -54,7 +54,7 @@ namespace BrandBud
                 {
                     var qPre = Q.GetPrediction(sender);
 
-                    if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                    if (qPre.HitChance == HitChance.High)
                         Q.Cast(qPre.CastPosition);
                 }
             }
@@ -74,7 +74,7 @@ namespace BrandBud
                 {
                     var qPre = Q.GetPrediction(sender);
 
-                    if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                    if (qPre.HitChance == HitChance.High)
                         Q.Cast(qPre.CastPosition);
                 }
             }
@@ -130,7 +130,7 @@ namespace BrandBud
                     {
                         var qPre = Q.GetPrediction(target);
 
-                        if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                        if (qPre.HitChance == HitChance.High)
                         {
                             Q.Cast(qPre.CastPosition);
                         }
@@ -171,7 +171,7 @@ namespace BrandBud
                     {
                         var qPre = Q.GetPrediction(target);
 
-                        if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                        if (qPre.HitChance == HitChance.High)
                         {
                             Q.Cast(qPre.CastPosition);
                         }
@@ -213,7 +213,7 @@ namespace BrandBud
                     {
                         var qPre = Q.GetPrediction(target);
 
-                        if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                        if (qPre.HitChance == HitChance.High)
                         {
                             Q.Cast(qPre.CastPosition);
                         }
@@ -249,7 +249,7 @@ namespace BrandBud
                     {
                         var qPre = Q.GetPrediction(target);
 
-                        if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                        if (qPre.HitChance == HitChance.High)
                         {
                             Q.Cast(qPre.CastPosition);
                         }
@@ -287,7 +287,7 @@ namespace BrandBud
                 {
                     var qPre = Q.GetPrediction(minion);
 
-                    if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                    if (qPre.HitChance == HitChance.High)
                     {
                         Q.Cast(qPre.CastPosition);
                     }
@@ -343,7 +343,7 @@ namespace BrandBud
                    
                         var qPre = Q.GetPrediction(target);
 
-                        if (qPre.HitChance == HitChance.High && qPre.CollisionObjects.Length < 1)
+                        if (qPre.HitChance == HitChance.High)
                         {
                             Q.Cast(qPre.CastPosition);
                         }
