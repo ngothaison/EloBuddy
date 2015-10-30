@@ -30,8 +30,8 @@ namespace BrandBud
 
         static void Loading_OnLoadingComplete(EventArgs args)
         {
-            Q = new Spell.Skillshot(SpellSlot.Q, 1050, SkillShotType.Linear, 250, 1600, 60);
-            W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular,850, int.MaxValue, 240);
+            Q = new Spell.Skillshot(SpellSlot.Q, 1050, SkillShotType.Linear, 250, 1200, 85);
+            W = new Spell.Skillshot(SpellSlot.W, 900, SkillShotType.Circular, 5, int.MaxValue, 250);
             E = new Spell.Targeted(SpellSlot.E, 625);
             R = new Spell.Targeted(SpellSlot.R, 750);
 
@@ -128,22 +128,22 @@ namespace BrandBud
                 {
                     if(target.HasBuff("brandablaze"))
                     {
-                        var qPre = Q.GetPrediction(target);
+                        var qPre = Prediction.Position.PredictLinearMissile(target, Q.Range, Q.Radius, Q.CastDelay, Q.Speed, int.MaxValue, player.ServerPosition);
 
-                        if (qPre.HitChance == HitChance.High)
+                        if (qPre.HitChance >= HitChance.High)
                         {
-                            Q.Cast(qPre.CastPosition);
+                            Q.Cast(target);
                         }
                     }
                 }
 
                 if (W.IsReady() && MenuManager.GetCheckBox("Combo.W") && target.IsValidTarget(W.Range))
                 {
-                    var wPre = W.GetPrediction(target);
+                    var wPre = Prediction.Position.PredictCircularMissile(target, W.Range, W.Radius, W.CastDelay, W.Speed, player.ServerPosition);
 
-                    if (wPre.HitChance == HitChance.High)
+                    if (wPre.HitChance >= HitChance.High)
                     {
-                        W.Cast(wPre.CastPosition);
+                        W.Cast(target);
                     }
                 }
 
@@ -157,11 +157,11 @@ namespace BrandBud
             {
                 if (W.IsReady() && MenuManager.GetCheckBox("Combo.W") && target.IsValidTarget(W.Range))
                 {
-                    var wPre = W.GetPrediction(target);
+                    var wPre = Prediction.Position.PredictCircularMissile(target, W.Range, W.Radius, W.CastDelay, W.Speed, player.ServerPosition);
 
-                    if (wPre.HitChance == HitChance.High)
+                    if (wPre.HitChance >= HitChance.High)
                     {
-                        W.Cast(wPre.CastPosition);
+                        W.Cast(target);
                     }
                 }
 
@@ -169,11 +169,11 @@ namespace BrandBud
                 {
                     if (target.HasBuff("brandablaze"))
                     {
-                        var qPre = Q.GetPrediction(target);
+                        var qPre = Prediction.Position.PredictLinearMissile(target, Q.Range, Q.Radius, Q.CastDelay, Q.Speed, int.MaxValue, player.ServerPosition);
 
-                        if (qPre.HitChance == HitChance.High)
+                        if (qPre.HitChance >= HitChance.High)
                         {
-                            Q.Cast(qPre.CastPosition);
+                            Q.Cast(target);
                         }
                     }
                 }
@@ -211,22 +211,22 @@ namespace BrandBud
                 {
                     if (target.HasBuff("brandablaze"))
                     {
-                        var qPre = Q.GetPrediction(target);
+                        var qPre = Prediction.Position.PredictLinearMissile(target, Q.Range, Q.Radius, Q.CastDelay, Q.Speed, int.MaxValue, player.ServerPosition);
 
-                        if (qPre.HitChance == HitChance.High)
+                        if (qPre.HitChance >= HitChance.High)
                         {
-                            Q.Cast(qPre.CastPosition);
+                            Q.Cast(target);
                         }
                     }
                 }
 
                 if (W.IsReady() && MenuManager.GetCheckBox("Harass.W") && target.IsValidTarget(W.Range))
                 {
-                    var wPre = W.GetPrediction(target);
+                    var wPre = Prediction.Position.PredictCircularMissile(target, W.Range, W.Radius, W.CastDelay, W.Speed, player.ServerPosition);
 
-                    if (wPre.HitChance == HitChance.High)
+                    if (wPre.HitChance >= HitChance.High)
                     {
-                        W.Cast(wPre.CastPosition);
+                        W.Cast(target);
                     }
                 }              
             }
@@ -235,11 +235,11 @@ namespace BrandBud
             {
                 if (W.IsReady() && MenuManager.GetCheckBox("Harass.W") && target.IsValidTarget(W.Range))
                 {
-                    var wPre = W.GetPrediction(target);
+                    var wPre = Prediction.Position.PredictCircularMissile(target, W.Range, W.Radius, W.CastDelay, W.Speed, player.ServerPosition);
 
-                    if (wPre.HitChance == HitChance.High)
+                    if (wPre.HitChance >= HitChance.High)
                     {
-                        W.Cast(wPre.CastPosition);
+                        W.Cast(target);
                     }
                 }
 
@@ -247,11 +247,11 @@ namespace BrandBud
                 {
                     if (target.HasBuff("brandablaze"))
                     {
-                        var qPre = Q.GetPrediction(target);
+                        var qPre = Prediction.Position.PredictLinearMissile(target, Q.Range, Q.Radius, Q.CastDelay, Q.Speed, int.MaxValue, player.ServerPosition);
 
-                        if (qPre.HitChance == HitChance.High)
+                        if (qPre.HitChance >= HitChance.High)
                         {
-                            Q.Cast(qPre.CastPosition);
+                            Q.Cast(target);
                         }
                     }
                 }
